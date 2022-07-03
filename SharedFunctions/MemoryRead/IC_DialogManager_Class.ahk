@@ -36,13 +36,14 @@ class IC_DialogManager64_Class
 
     GetVersion()
     {
-        return "v1.0.10, 2022-04-16, IC v0.430+, 64-bit"
+        return "v1.0.12, 2022-07-01, IC v0.455+, 64-bit"
     }
 
     Refresh()
     {
         this.Main := new _ClassMemory("ahk_exe IdleDragons.exe", "", hProcessCopy)
         this.BaseAddress := this.Main.getModuleBaseAddress("mono-2.0-bdwgc.dll")+0x00495C70
+        ;this.BaseAddress := this.Main.getModuleBaseAddress("mono-2.0-bdwgc.dll")+0x00499C70
         this.UnityGameEngine := {}
         this.UnityGameEngine.Dialogs := {}
         if(this.HasOverlay())
